@@ -4,13 +4,6 @@ import { useHistory } from "react-router-dom";
 const AdminNavber = (props) => {
   const history = useHistory();
 
-  const logout = () => {
-    localStorage.removeItem("jwt");
-    localStorage.removeItem("cart");
-    localStorage.removeItem("wishList");
-    window.location.href = "/";
-  };
-
   return (
     <Fragment>
       <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white">

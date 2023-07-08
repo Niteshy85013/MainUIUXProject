@@ -32,13 +32,17 @@ const Navber = (props) => {
       {/* Navber Section */}
       <nav className="fixed top-0 w-full z-20 shadow-lg lg:shadow-none bg-blue-300 ">
         <div className="m-4 md:mx-12 md:my-6 grid grid-cols-4 lg:grid-cols-3">
-          <div className="hidden lg:block col-span-1 flex text-white-600 mt-1">
-            <span
-              className="hover:bg-gray-200 px-4 py-3 rounded-lg font-light tracking-widest hover:text-gray-800 cursor-pointer"
+          <div className="hidden lg:block col-span-1 flex   mt-1">
+            <div
+              className="   rounded-lg   tracking-widest  cursor-pointer"
               onClick={(e) => history.push("/")}
             >
-              Home
-            </span>
+              <img
+                src="./images/logo.png"
+                alt=""
+                style={{ height: "2.5rem" }}
+              />
+            </div>
           </div>
           <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
             <svg
@@ -69,17 +73,11 @@ const Navber = (props) => {
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
             className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
-          >
-            {/* <img
-              className="w-16 h-16 object-cover object-center"
-              src={logo}
-              alt="logo"
-            /> */}
-          </div>
+          ></div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             <div
               onClick={(e) => history.push("/products")}
-              className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer"
+              className="bg-black text-white rounded-lg px-2 py-2 cursor-pointer  text-black  font-bold"
               title=""
             >
               Sell Product
@@ -87,7 +85,7 @@ const Navber = (props) => {
             {/*  WishList Page Button */}
             <div
               onClick={(e) => history.push("/wish-list")}
-              className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer"
+              className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer text-black font-bold"
               title=""
             >
               WishList
@@ -95,24 +93,10 @@ const Navber = (props) => {
             {localStorage.getItem("jwt") ? (
               <Fragment>
                 <div
-                  className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
+                  className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative text-black  font-bold"
                   title=""
                 >
                   My Account
-                  {/* <svg
-                    className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg> */}
                   <div className="userDropdown absolute right-0 mt-1 bg-gray-200 rounded">
                     {!isAdmin() ? (
                       <Fragment>
@@ -137,7 +121,9 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Products</span>
+                            <span className=" text-black  font-bold">
+                              My Products
+                            </span>
                           </span>
                           <span
                             onClick={(e) => history.push("/user/profile")}
@@ -159,7 +145,9 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Account</span>
+                            <span className=" text-black  font-bold">
+                              My Account
+                            </span>
                           </span>
                           <span
                             onClick={(e) => history.push("/wish-list")}
@@ -181,7 +169,9 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>My Wishlist</span>
+                            <span className=" text-black  font-bold">
+                              My Wishlist
+                            </span>
                           </span>
                           <span
                             onClick={(e) => history.push("/user/setting")}
@@ -209,7 +199,9 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Setting</span>
+                            <span className=" text-black  font-bold">
+                              Setting
+                            </span>
                           </span>
                           <span
                             onClick={(e) => logout()}
@@ -231,7 +223,9 @@ const Navber = (props) => {
                                 />
                               </svg>
                             </span>
-                            <span>Logout</span>
+                            <span className=" text-black  font-bold">
+                              Logout
+                            </span>
                           </span>
                         </li>
                       </Fragment>
@@ -266,28 +260,6 @@ const Navber = (props) => {
                             </span>
                             <span>Admin Panel</span>
                           </span>
-                          <span
-                            onClick={(e) => logout()}
-                            className="flex space-x-2 py-2 px-8 hover:bg-gray-400 cursor-pointer"
-                          >
-                            <span>
-                              <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                                />
-                              </svg>
-                            </span>
-                            <span>Logout</span>
-                          </span>
                         </li>
                       </Fragment>
                     )}
@@ -298,48 +270,19 @@ const Navber = (props) => {
               /* Login Modal Button */
               <div
                 onClick={(e) => loginModalOpen()}
-                className="cursor-pointer hover:bg-gray-200 px-2 py-2 rounded-lg"
+                className="cursor-pointer hover:bg-gray-200 px-2 py-2 rounded-lg  text-black  font-bold"
                 title=""
               >
                 Login
-                {/* <svg
-                  className="w-8 h-8 text-gray-600 hover:text-gray-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                  />
-                </svg> */}
               </div>
             )}
             {/* Cart Modal Button */}
             <div
               onClick={(e) => cartModalOpen()}
-              className="hover:bg-gray-200 px-2 py-2 rounded-lg relative cursor-pointer"
+              className="hover:bg-gray-200 px-2 py-2 rounded-lg relative cursor-pointer  text-black  font-bold"
               title=""
             >
               Cart
-              {/* <svg
-                className="w-8 h-8 text-gray-600 hover:text-gray-800"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                />
-              </svg> */}
               <span className="absolute top-0 ml-6 mt-1 bg-yellow-700 rounded px-1 text-white text-xs hover:text-gray-200 font-semibold">
                 {data.cartProduct !== null ? data.cartProduct.length : 0}
               </span>
