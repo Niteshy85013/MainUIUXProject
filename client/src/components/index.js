@@ -3,7 +3,6 @@ import {
   Home,
   WishList,
   ProtectedRoute,
-  AdminProtectedRoute,
   CartProtectedRoute,
   PageNotFound,
   ProductDetails,
@@ -11,7 +10,7 @@ import {
   CheckoutPage,
   Products,
 } from "./shop";
-import { DashboardAdmin, Categories, Orders } from "./admin";
+import { DashboardAdmin, Categories } from "./admin";
 import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -40,7 +39,7 @@ const Routes = (props) => {
           component={Categories}
         />
         <ProtectedRoute exact={true} path="/products" component={Products} />
-        <Route exact={true} path="/admin/dashboard/orders" component={Orders} />
+
         <ProtectedRoute
           exact={true}
           path="/user/profile"
