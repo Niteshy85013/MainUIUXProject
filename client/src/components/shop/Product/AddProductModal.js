@@ -19,6 +19,7 @@ const AddProductDetail = ({ categories }) => {
     pPrice: "",
     pOffer: 0,
     pAddress: "",
+    pCondition: "",
     pPhone: "",
     pFname: "",
     pQuantity: "",
@@ -60,6 +61,7 @@ const AddProductDetail = ({ categories }) => {
           pImage: "",
           pAddress: "",
           pPhone: "",
+          pCondition: "",
           pFname: "",
           pStatus: "Active",
           pCategory: "",
@@ -79,6 +81,7 @@ const AddProductDetail = ({ categories }) => {
             pCategory: "",
             pPrice: "",
             pAddress: "",
+            pCondition: "",
             pPhone: "",
             pFname: "",
             pQuantity: "",
@@ -165,7 +168,7 @@ const AddProductDetail = ({ categories }) => {
                 />
               </div>
               <div className="w-1/2 flex flex-col space-y-1 space-x-1">
-                <label htmlFor="email">Your Fullname *</label>
+                <label htmlFor="pFname">Your Fullname *</label>
                 <input
                   value={fData.pFname}
                   onChange={(e) =>
@@ -227,6 +230,22 @@ const AddProductDetail = ({ categories }) => {
                     })
                   }
                   type="number"
+                  className="px-4 py-2 border focus:outline-none"
+                />
+              </div>
+              <div className="w-1/2 flex flex-col space-y-1">
+                <label htmlFor="pCondition">Product Condition*</label>
+                <input
+                  value={fData.pCondition}
+                  onChange={(e) =>
+                    setFdata({
+                      ...fData,
+                      error: false,
+                      success: false,
+                      pCondition: e.target.value,
+                    })
+                  }
+                  type="text"
                   className="px-4 py-2 border focus:outline-none"
                 />
               </div>

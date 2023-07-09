@@ -83,6 +83,7 @@ const AllProduct = (props) => {
               <th className="px-4 py-2 border">Image</th>
               <th className="px-4 py-2 border">Status</th>
               <th className="px-4 py-2 border">Stock</th>
+              <th className="px-4 py-2 border">Condition</th>
               <th className="px-4 py-2 border">Category</th>
               <th className="px-4 py-2 border">Offer</th>
               <th className="px-4 py-2 border">Created at</th>
@@ -157,6 +158,7 @@ const ProductTable = ({ product, deleteProduct, editProduct }) => {
           )}
         </td>
         <td className="p-2 text-center">{product.pQuantity}</td>
+        <td className="p-2 text-center">{product.pCondition}</td>
         <td className="p-2 text-center">{product.pCategory.cName}</td>
         <td className="p-2 text-center">{product.pOffer}</td>
         <td className="p-2 text-center">

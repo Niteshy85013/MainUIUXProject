@@ -22,6 +22,7 @@ const EditProductModal = (props) => {
     pStatus: "",
     pCategory: "",
     pQuantity: "",
+    pCondition: "",
     pPhone: "",
     pAddress: "",
     pFname: "",
@@ -53,6 +54,7 @@ const EditProductModal = (props) => {
       pPhone: data.editProductModal.pPhone,
       pAddress: data.editProductModal.pAddress,
       pCategory: data.editProductModal.pCategory,
+      pCondition: data.editProductModal.pCondition,
       pQuantity: data.editProductModal.pQuantity,
       pPrice: data.editProductModal.pPrice,
       pOffer: data.editProductModal.pOffer,
@@ -232,6 +234,22 @@ const EditProductModal = (props) => {
                     })
                   }
                   type="number"
+                  className="px-4 py-2 border focus:outline-none"
+                />
+              </div>
+              <div className="w-1/2 flex flex-col space-y-1">
+                <label htmlFor="pCondition">Product Condition*</label>
+                <input
+                  value={editformData.pCondition}
+                  onChange={(e) =>
+                    setEditformdata({
+                      ...editformData,
+                      error: false,
+                      success: false,
+                      pCondition: e.target.value,
+                    })
+                  }
+                  type="text"
                   className="px-4 py-2 border focus:outline-none"
                 />
               </div>

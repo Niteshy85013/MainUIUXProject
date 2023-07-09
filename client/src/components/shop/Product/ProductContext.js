@@ -9,6 +9,7 @@ export const productState = {
     pImages: null,
     pStatus: "",
     pFname: "",
+    pCondition: "",
     pAddress: "",
     pPhone: "",
     pCategory: "",
@@ -45,6 +46,7 @@ export const productReducer = (state, action) => {
           pStatus: action.product.pStatus,
           pCategory: action.product.pCategory,
           pFname: action.product.pFname,
+          pCondition: action.product.pCondition,
           pPhone: action.product.pPhone,
           pAddress: action.product.pAddress,
 
@@ -64,6 +66,7 @@ export const productReducer = (state, action) => {
           pImages: null,
           pStatus: "",
           pFname: "",
+          pCondition:"",
           pAddress: "",
           pPhone: "",
           pCategory: "",

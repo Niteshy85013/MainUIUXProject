@@ -49,17 +49,7 @@ const Sidebar = (props) => {
             My Orders
           </div>
           <hr />
-          <div
-            onClick={(e) => history.push("/products")}
-            className={`${
-              location.pathname === "/products"
-                ? "border-r-4 border-yellow-700 bg-gray-200"
-                : ""
-            }  px-4 py-4 hover:bg-gray-200 cursor-pointer`}
-          >
-            My Products
-          </div>
-          <hr />
+
           <div
             onClick={(e) => history.push("/user/profile")}
             className={`${
@@ -71,12 +61,7 @@ const Sidebar = (props) => {
             My Accounts
           </div>
           <hr />
-          <div
-            onClick={(e) => history.push("/wish-list")}
-            className={` px-4 py-4 hover:bg-gray-200 cursor-pointer`}
-          >
-            My Wishlist
-          </div>
+
           <hr />
           <div
             onClick={(e) => history.push("/user/setting")}

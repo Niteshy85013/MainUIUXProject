@@ -71,11 +71,12 @@ const SingleProduct = (props) => {
                   style={{ height: "10rem" }}
                 />
                 <div className="flex items-center justify-between mt-2">
-                  <div className="text-gray-600 font-light truncate">
+                  <h1 className="text-black font-bold truncate">
                     {item.pName}
-                  </div>
+                  </h1>
                 </div>
-                <div>${item.pPrice}.00</div>
+                <div>{item.pCondition}</div>
+                <div> रू. {item.pPrice}.00</div>
                 {/* WhisList Logic  */}
                 <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
                   <svg

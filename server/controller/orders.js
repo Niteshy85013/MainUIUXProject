@@ -19,19 +19,24 @@ class Order {
   async getOrderByUser(req, res) {
     let { uId } = req.body;
     if (!uId) {
-      return res.json({ message: "All filled must be required" });
+      return res.json({ message: "All fields must be required" });
     } else {
       try {
         let Order = await orderModel
           .find({ user: uId })
           .populate("allProduct.id", "pName pImages pPrice")
           .populate("user", "name email")
-          .sort({ _id: -1 });
-        if (Order) {
+          .sort({ _id: -1 })
+          .exec(); // Add ".exec()" to execute the query.
+        if (Order.length > 0) {
+          // Check if Order array is not empty
           return res.json({ Order });
+        } else {
+          return res.json({ message: "No order found for the specified user" });
         }
       } catch (err) {
         console.log(err);
+        return res.status(500).json({ message: "Internal Server Error" });
       }
     }
   }

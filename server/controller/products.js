@@ -47,6 +47,7 @@ class Product {
       pDescription,
       pPrice,
       pQuantity,
+      pCondition,
       pCategory,
       pOffer,
       pStatus,
@@ -62,6 +63,7 @@ class Product {
       !pPhone |
       !pFname |
       !pAddress |
+      !pCondition |
       !pPrice |
       !pQuantity |
       !pCategory |
@@ -94,6 +96,7 @@ class Product {
           pDescription,
           pPrice,
           pQuantity,
+          pCondition,
           pCategory,
           pPhone,
           pFname,
@@ -121,6 +124,7 @@ class Product {
       pCategory,
       pOffer,
       pPhone,
+      pCondition,
       pAddress,
       pFname,
       pStatus,
@@ -136,6 +140,7 @@ class Product {
       !pPrice |
       !pPhone |
       !pFname |
+      !pCondition |
       !pAddress |
       !pQuantity |
       !pCategory |
@@ -161,6 +166,7 @@ class Product {
         pPrice,
         pQuantity,
         pCategory,
+        pCondition,
         pAddress,
         pFname,
         pPhone,

@@ -19,6 +19,10 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    pCondition: {
+      type: String,
+      required: false,
+    },
     pDescription: {
       type: String,
       required: true,
