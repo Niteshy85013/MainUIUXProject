@@ -152,11 +152,10 @@ const Signup = (props) => {
           />
           {!data.error ? "" : alert(data.error.cPassword, "red")}
         </div>
-        
+
         <div
           onClick={(e) => formSubmit()}
-          style={{ background: "#ABC270" }}
-          className="px-4 py-2 text-white text-center cursor-pointer font-medium"
+          className="px-4 py-2 text-white text-center bg-green-500 cursor-pointer font-medium"
         >
           Create an account
         </div>

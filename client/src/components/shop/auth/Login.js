@@ -3,9 +3,8 @@ import { loginReq } from "./fetchApi";
 import { LayoutContext } from "../index";
 
 const Login = (props) => {
-  const { data: layoutData, dispatch: layoutDispatch } = useContext(
-    LayoutContext
-  );
+  const { data: layoutData, dispatch: layoutDispatch } =
+    useContext(LayoutContext);
 
   const [data, setData] = useState({
     email: "",
@@ -88,11 +87,10 @@ const Login = (props) => {
           />
           {!data.error ? "" : alert(data.error)}
         </div>
-        
+
         <div
           onClick={(e) => formSubmit()}
-          style={{ background: "#ABC270" }}
-          className="font-medium px-4 py-2 text-white text-center cursor-pointer"
+          className="font-medium px-4 py-2 text-white bg-green-500 text-center cursor-pointer"
         >
           Login
         </div>

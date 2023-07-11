@@ -18,3 +18,9 @@ export const cartListProduct = async () => {
     console.log(error);
   }
 };
+
+
+
+
+export const isAuthenticate = () =>
+  localStorage.getItem("jwt") ? JSON.parse(localStorage.getItem("jwt")) : false;

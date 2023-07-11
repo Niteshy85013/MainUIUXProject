@@ -9,12 +9,14 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       isAuthenticate() && !isAdmin() ? (
         <Component {...props} />
       ) : (
-        <Redirect
-          to={{
-            pathname: "/",
-            state: { from: props.location },
-          }}
-        />
+        <>
+          <Redirect
+            to={{
+              pathname: "/",
+              state: { from: props.location },
+            }}
+          />
+        </>
       )
     }
   />

@@ -102,7 +102,7 @@ export const fetchData = async (cartListProduct, dispatch) => {
   try {
     let responseData = await cartListProduct();
     if (responseData && responseData.Products) {
-      setTimeout(function () {
+      setTimeout(() => {
         dispatch({ type: "cartProduct", payload: responseData.Products });
         dispatch({ type: "loading", payload: false });
       }, 1000);
@@ -135,16 +135,16 @@ export const pay = async (
       phone: state.phone,
     };
     try {
-      let resposeData = await createOrder(orderData);
-      if (resposeData.success) {
+      let responseData = await createOrder(orderData);
+      if (responseData.success) {
         localStorage.setItem("cart", JSON.stringify([]));
         dispatch({ type: "cartProduct", payload: null });
         dispatch({ type: "cartTotalCost", payload: null });
         dispatch({ type: "orderSuccess", payload: true });
         dispatch({ type: "loading", payload: false });
-        return history.push("/");
-      } else if (resposeData.error) {
-        console.log(resposeData.error);
+        history.push("/");
+      } else if (responseData.error) {
+        console.log(responseData.error);
       }
     } catch (error) {
       console.log(error);

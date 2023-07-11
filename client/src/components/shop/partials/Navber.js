@@ -5,6 +5,7 @@ import "./style.css";
 import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
+import { isAuthenticate } from "./FetchApi";
 
 const Navber = (props) => {
   const history = useHistory();
@@ -36,11 +37,7 @@ const Navber = (props) => {
               className="   rounded-lg   tracking-widest  cursor-pointer"
               onClick={(e) => history.push("/")}
             >
-              <img
-                src="./images/logo.png"
-                alt=""
-                style={{ height: "2.5rem" }}
-              />
+              <h1 className="text-red-600 text-2xl">𝑴𝒂𝒓𝒌𝒆𝒕𝑯𝒖𝒃</h1>
             </div>
           </div>
           <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
@@ -59,13 +56,6 @@ const Navber = (props) => {
                 d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-            {/* <span
-              onClick={(e) => history.push("/")}
-              style={{ letterSpacing: "0.10rem" }}
-              className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
-            >
-              Bakey
-            </span> */}
           </div>
 
           <div
@@ -74,14 +64,33 @@ const Navber = (props) => {
             className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
           ></div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
-            <div
-              onClick={(e) => history.push("/products")}
-              className="bg-black text-white rounded-lg px-2 py-2 cursor-pointer  text-black  font-bold"
-              title=""
-            >
-              Sell Product
-            </div>
-            {/*  WishList Page Button */}
+            <Fragment>
+              {isAuthenticate() ? (
+                <div
+                  className="bg-black text-white rounded-lg px-2 py-2 cursor-pointer  text-black  font-bold"
+                  onClick={(e) => {
+                    history.push("/products");
+                  }}
+                >
+                  Sell Products
+                </div>
+              ) : (
+                <div
+                  className="bg-black text-white rounded-lg px-2 py-2 cursor-pointer  text-black  font-bold"
+                  onClick={(e) => {
+                    history.push("/");
+
+                    dispatch({
+                      type: "loginSignupModalToggle",
+                      payload: !data.loginSignupModal,
+                    });
+                  }}
+                >
+                  Sell Products
+                </div>
+              )}
+            </Fragment>
+
             <div
               onClick={(e) => history.push("/wish-list")}
               className="hover:bg-gray-200 rounded-lg px-2 py-2 cursor-pointer text-black font-bold"
