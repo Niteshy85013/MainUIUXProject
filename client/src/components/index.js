@@ -14,7 +14,7 @@ import { DashboardAdmin, Categories, Orders } from "./admin";
 import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import OrdersComponent from "./shop/order/order";
+ 
 
 const Routes = (props) => {
   return (
@@ -40,7 +40,7 @@ const Routes = (props) => {
           component={Categories}
         />
         <ProtectedRoute exact={true} path="/products" component={Products} />
-        <Route exact={true} path="/user/orderss" component={OrdersComponent} />
+         
 
         <ProtectedRoute
           exact={true}

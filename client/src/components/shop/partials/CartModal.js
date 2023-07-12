@@ -170,13 +170,13 @@ const CartModal = () => {
               <Fragment>
                 {isAuthenticate() ? (
                   <div
-                    className="px-4 py-2 bg-black text-black text-center cursor-pointer"
+                    className="px-4 py-2 bg-green-500 text-black text-center cursor-pointer"
                     onClick={(e) => {
                       history.push("/checkout");
                       cartModalOpen();
                     }}
                   >
-                    Checkout {data.cartTotalCost}.00
+                    Checkout रू. {data.cartTotalCost}.00
                   </div>
                 ) : (
                   <div
@@ -194,7 +194,7 @@ const CartModal = () => {
                       });
                     }}
                   >
-                    Checkout {data.cartTotalCost}.00
+                    Checkout रू. {data.cartTotalCost}.00
                   </div>
                 )}
               </Fragment>

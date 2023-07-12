@@ -11,6 +11,7 @@ import ProductDetails from "./productDetails";
 import ProductByCategory from "./home/ProductByCategory";
 import CheckoutPage from "./order/CheckoutPage";
 import Products from "./Product";
+
 export {
   Home,
   WishList,

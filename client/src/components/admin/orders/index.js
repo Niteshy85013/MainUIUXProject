@@ -3,6 +3,7 @@ import AdminLayout from "../layout";
 import OrderMenu from "./OrderMenu";
 import AllOrders from "./AllOrders";
 import { orderState, orderReducer } from "./OrderContext";
+import Layout from "../../shop/layout";
 
 /* This context manage all of the orders component's data */
 export const OrderContext = createContext();
@@ -21,7 +22,7 @@ const Orders = (props) => {
   return (
     <Fragment>
       <OrderContext.Provider value={{ data, dispatch }}>
-        <AdminLayout children={<OrderComponent />} />
+        <Layout children={<OrderComponent />} />
       </OrderContext.Provider>
     </Fragment>
   );
